@@ -140,8 +140,8 @@ constexpr direction to_direction(std::string_view s) {
 }
 
 // level
-constexpr auto const kMinLevel = -4.0F;
-constexpr auto const kMaxLevel = 3.5F;
+constexpr auto const kMinLevel = -5.0F;
+constexpr auto const kMaxLevel = 12F;
 
 struct level_t {
   static constexpr auto kNoLevel = 0U;
@@ -191,7 +191,7 @@ constexpr std::tuple<level_t, level_t, bool> get_levels(
   return {from, to == kNoLevel ? from : to, std::popcount(levels) > 2};
 }
 
-static_assert(kLevelBits == 5U);
+static_assert(kLevelBits == 7U);
 
 // speed
 enum speed_limit : std::uint8_t {
